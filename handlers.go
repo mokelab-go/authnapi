@@ -12,7 +12,7 @@ func authenticate(s Service) http.HandlerFunc {
 		identifier, _ := params["identifier"].(string)
 		password, _ := params["password"].(string)
 
-		resp := s.Authenticate(identifier, password, params)
+		resp := s.Authenticate(identifier, password)
 		resp.Write(w)
 	}
 }
